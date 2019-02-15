@@ -7,15 +7,15 @@ document.getElementById("stockSubmit").addEventListener("click", function(event)
   fetch(url)
     .then(function(response) {
       return response.json();
-    }).then(function(json) {	
+    }).then(function(json) {
       console.log(json);
       let results = "";
       results += '<h1>' + json.results[0].name + ":" +"</h1>";
       results += '<h2>' + json.results[0].exchange + ": " + value + "</h2>"
-      results += '<h2>' + "Opening Price: " + json.results[0].open + "</h2>"
-      results += '<h2>' + "Current Price: " + json.results[0].lastPrice + "</h2>"
-      results += '<h2>' + "Day's High: " + json.results[0].high + "</h2>"
-      results += '<h2>' + "Day's Low: " + json.results[0].low + "</h2>"
+      results += '<h2>' + "Opening Price: $" + json.results[0].open + "</h2>"
+      results += '<h2>' + "Current Price: $" + json.results[0].lastPrice + "</h2>"
+      results += '<h2>' + "Day's High: $" + json.results[0].high + "</h2>"
+      results += '<h2>' + "Day's Low: $" + json.results[0].low + "</h2>"
       change=json.results[0].percentChange
       if (change<0){
         console.log('hi')
@@ -23,9 +23,15 @@ document.getElementById("stockSubmit").addEventListener("click", function(event)
       } else{
         results += '<h2 class="positive">' + "Day's change: " + change + "%" + "</h2>"
       }
+      results += '<h2>' + "52 Week High on " + json.results[0].fiftyTwoWkHighDate
+        +  ": $" + json.results[0].fiftyTwoWkHigh + "</h2>"
+      results += '<h2>' + "52 Week Low on " + json.results[0].fiftyTwoWkLowDate
+        +  ": $" + json.results[0].fiftyTwoWkLow + "</h2>"
       let name = json.results[0].name;
       name=name.substr(0,name.indexOf(' '));
-      let url2= "https://logo.clearbit.com/" + name+ ".com"
+      if(!name.endsWith(".com"))
+        name+=".com";
+      let url2= "https://logo.clearbit.com/" + name
       console.log(url2);
       document.getElementById("stockResults").innerHTML = results;
       document.getElementById("logoResults").innerHTML = "<img src='"+url2+"'</img>";
@@ -43,21 +49,25 @@ document.getElementById("Facebook").addEventListener("click", function(event) {
   fetch(url3)
     .then(function(response) {
       return response.json();
-    }).then(function(json) {	
+    }).then(function(json) {
       console.log(json);
       let results = "";
       results += '<h1>' + json.results[0].name + ":" +"</h1>";
       results += '<h2>' + json.results[0].exchange + ": " + value2 + "</h2>"
-      results += '<h2>' + "Opening Price: " + json.results[0].open + "</h2>"
-      results += '<h2>' + "Current Price: " + json.results[0].lastPrice + "</h2>"
-      results += '<h2>' + "Day's High: " + json.results[0].high + "</h2>"
-      results += '<h2>' + "Day's Low: " + json.results[0].low + "</h2>"
+      results += '<h2>' + "Opening Price: $" + json.results[0].open + "</h2>"
+      results += '<h2>' + "Current Price: $" + json.results[0].lastPrice + "</h2>"
+      results += '<h2>' + "Day's High: $" + json.results[0].high + "</h2>"
+      results += '<h2>' + "Day's Low: $" + json.results[0].low + "</h2>"
       change=json.results[0].percentChange
       if (change<0){
         results += '<h2 class="negative">' + "Day's change: " + change + "%" + "</h2>"
       } else{
         results += '<h2 class="positive">' + "Day's change: " + change + "%" + "</h2>"
       }
+      results += '<h2>' + "52 Week High on " + json.results[0].fiftyTwoWkHighDate
+        +  ": $" + json.results[0].fiftyTwoWkHigh + "</h2>"
+      results += '<h2>' + "52 Week Low on " + json.results[0].fiftyTwoWkLowDate
+        +  ": $" + json.results[0].fiftyTwoWkLow + "</h2>"
       let name = json.results[0].name;
       name=name.substr(0,name.indexOf(' '));
       let url4= "https://logo.clearbit.com/" + name+ ".com"
@@ -79,21 +89,25 @@ document.getElementById("Tesla").addEventListener("click", function(event) {
   fetch(url4)
     .then(function(response) {
       return response.json();
-    }).then(function(json) {	
+    }).then(function(json) {
       console.log(json);
       let results = "";
       results += '<h1>' + json.results[0].name + ":" +"</h1>";
       results += '<h2>' + json.results[0].exchange + ": " + value3 + "</h2>"
-      results += '<h2>' + "Opening Price: " + json.results[0].open + "</h2>"
-      results += '<h2>' + "Current Price: " + json.results[0].lastPrice + "</h2>"
-      results += '<h2>' + "Day's High: " + json.results[0].high + "</h2>"
-      results += '<h2>' + "Day's Low: " + json.results[0].low + "</h2>"
+      results += '<h2>' + "Opening Price: $" + json.results[0].open + "</h2>"
+      results += '<h2>' + "Current Price: $" + json.results[0].lastPrice + "</h2>"
+      results += '<h2>' + "Day's High: $" + json.results[0].high + "</h2>"
+      results += '<h2>' + "Day's Low: $" + json.results[0].low + "</h2>"
       change=json.results[0].percentChange
       if (change<0){
         results += '<h2 class="negative">' + "Day's change: " + change + "%" + "</h2>"
       } else{
         results += '<h2 class="positive">' + "Day's change: " + change + "%" + "</h2>"
       }
+      results += '<h2>' + "52 Week High on " + json.results[0].fiftyTwoWkHighDate
+        +  ": $" + json.results[0].fiftyTwoWkHigh + "</h2>"
+      results += '<h2>' + "52 Week Low on " + json.results[0].fiftyTwoWkLowDate
+        +  ": $" + json.results[0].fiftyTwoWkLow + "</h2>"
       let name = json.results[0].name;
       name=name.substr(0,name.indexOf(' '));
       let url5= "https://logo.clearbit.com/" + name+ ".com"
@@ -113,21 +127,25 @@ document.getElementById("Google").addEventListener("click", function(event) {
   fetch(url6)
     .then(function(response) {
       return response.json();
-    }).then(function(json) {	
+    }).then(function(json) {
       console.log(json);
       let results = "";
       results += '<h1>' + json.results[0].name + ":" +"</h1>";
       results += '<h2>' + json.results[0].exchange + ": " + value4 + "</h2>"
-      results += '<h2>' + "Opening Price: " + json.results[0].open + "</h2>"
-      results += '<h2>' + "Current Price: " + json.results[0].lastPrice + "</h2>"
-      results += '<h2>' + "Day's High: " + json.results[0].high + "</h2>"
-      results += '<h2>' + "Day's Low: " + json.results[0].low + "</h2>"
+      results += '<h2>' + "Opening Price: $" + json.results[0].open + "</h2>"
+      results += '<h2>' + "Current Price: $" + json.results[0].lastPrice + "</h2>"
+      results += '<h2>' + "Day's High: $" + json.results[0].high + "</h2>"
+      results += '<h2>' + "Day's Low: $" + json.results[0].low + "</h2>"
       change=json.results[0].percentChange
       if (change<0){
         results += '<h2 class="negative">' + "Day's change: " + change + "%" + "</h2>"
       } else{
         results += '<h2 class="positive">' + "Day's change: " + change + "%" + "</h2>"
       }
+      results += '<h2>' + "52 Week High on " + json.results[0].fiftyTwoWkHighDate
+        +  ": $" + json.results[0].fiftyTwoWkHigh + "</h2>"
+      results += '<h2>' + "52 Week Low on " + json.results[0].fiftyTwoWkLowDate
+        +  ": $" + json.results[0].fiftyTwoWkLow + "</h2>"
       let name = json.results[0].name;
       name=name.substr(0,name.indexOf(' '));
       let url7= "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"

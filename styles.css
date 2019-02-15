@@ -14,3 +14,7 @@ input.Facebook {
   display: inline-block;
   font-size: 16px;
 }
+
+footer p {
+  text-decoration: none;
+}
