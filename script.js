@@ -26,7 +26,7 @@ document.getElementById("stockSubmit").addEventListener("click", function(event)
       results += '<h2>' + "52 Week High on " + json.results[0].fiftyTwoWkHighDate
         +  ": $" + json.results[0].fiftyTwoWkHigh + "</h2>"
       results += '<h2>' + "52 Week Low on " + json.results[0].fiftyTwoWkLowDate
-        +  ": $" + json.results[0].fiftyTwoWkLow + "</h2>"
+        +  ": $" + json.results[0].fiftyTwoWkLow + "</h2><br><br><br>"
       let name = json.results[0].name;
       name=name.substr(0,name.indexOf(' '));
       if(!name.endsWith(".com"))
@@ -67,7 +67,7 @@ document.getElementById("Facebook").addEventListener("click", function(event) {
       results += '<h2>' + "52 Week High on " + json.results[0].fiftyTwoWkHighDate
         +  ": $" + json.results[0].fiftyTwoWkHigh + "</h2>"
       results += '<h2>' + "52 Week Low on " + json.results[0].fiftyTwoWkLowDate
-        +  ": $" + json.results[0].fiftyTwoWkLow + "</h2>"
+        +  ": $" + json.results[0].fiftyTwoWkLow + "</h2><br><br><br>"
       let name = json.results[0].name;
       name=name.substr(0,name.indexOf(' '));
       let url4= "https://logo.clearbit.com/" + name+ ".com"
@@ -107,7 +107,7 @@ document.getElementById("Tesla").addEventListener("click", function(event) {
       results += '<h2>' + "52 Week High on " + json.results[0].fiftyTwoWkHighDate
         +  ": $" + json.results[0].fiftyTwoWkHigh + "</h2>"
       results += '<h2>' + "52 Week Low on " + json.results[0].fiftyTwoWkLowDate
-        +  ": $" + json.results[0].fiftyTwoWkLow + "</h2>"
+        +  ": $" + json.results[0].fiftyTwoWkLow + "</h2><br><br><br>"
       let name = json.results[0].name;
       name=name.substr(0,name.indexOf(' '));
       let url5= "https://logo.clearbit.com/" + name+ ".com"
@@ -145,7 +145,7 @@ document.getElementById("Google").addEventListener("click", function(event) {
       results += '<h2>' + "52 Week High on " + json.results[0].fiftyTwoWkHighDate
         +  ": $" + json.results[0].fiftyTwoWkHigh + "</h2>"
       results += '<h2>' + "52 Week Low on " + json.results[0].fiftyTwoWkLowDate
-        +  ": $" + json.results[0].fiftyTwoWkLow + "</h2>"
+        +  ": $" + json.results[0].fiftyTwoWkLow + "</h2><br><br><br>"
       let name = json.results[0].name;
       name=name.substr(0,name.indexOf(' '));
       let url7= "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"

@@ -15,6 +15,18 @@ input.Facebook {
   font-size: 16px;
 }
 
-footer p {
-  text-decoration: none;
+body {
+  text-align: center;
+}
+
+form {
+  font-size: 30px;
+}
+
+#stockInput {
+  font-size: 20px;
+}
+
+#StockSubmit {
+  font-size: 80px;
 }
